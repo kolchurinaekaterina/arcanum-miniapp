@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: arcanum
+    runtime: python
+    plan: free
+    buildCommand: "echo Ready"
+    startCommand: "python server.py"
+    healthCheckPath: /health
+    envVars:
+      - key: YANDEX_API_KEY
+        sync: false
+      - key: YANDEX_FOLDER_ID
+        sync: false
+      - key: DAILY_LIMIT
+        value: "100"
